@@ -27,12 +27,10 @@ objectives:
   * Geopotential (Z)
   * Specific humidity (Q)
   * Vertical wind speed (W)
-- Like traditional NWP systems, GraphCast is autoregressive: It can be “rolled out” by feeding its own predictions back in as input, to generate an arbitrarily long trajectory of weather states (Fig. 1A).
+- Like traditional NWP systems, GraphCast is autoregressive: It can be “rolled out” by feeding its own predictions back in as input, to generate an arbitrarily long trajectory of weather states.
+- ![image](https://lh3.googleusercontent.com/PIGlxJLhF3Eit7xSXvVPmm3ZnOYspa9a8RcRkzfEdSnhy2rVubJmIondGQGiKF3TbHTIUOi6w_8xAej5UJ--c7o_8OukH_bDi4gYuEaQ0N6d_BXRQw=w2140-rw)
 
 ### GraphCast Architecture
-
-![image](https://www-science-org.mutex.gmu.edu/cms/10.1126/science.adi2336/asset/c93512fe-4811-4edf-aa57-376c670c31b3/assets/images/large/science.adi2336-f1.jpg)
-(A) The input weather state(s) are defined on a 0.25° latitude-longitude grid comprising a total of 721 × 1440 = 1,038,240 points. Yellow layers in the close-up pop-out window represent the five surface variables, and blue layers represent the six atmospheric variables that are repeated at 37 pressure levels (5 + 6 × 37 = 227 variables per point in total), resulting in a state representation of 235,680,480 values. (B) GraphCast predicts the next state of the weather on the grid. (C) A forecast is made by iteratively applying GraphCast (GC) to each previous predicted state, to produce a sequence of states that represent the weather at successive lead times. (D) The encoder component of the GraphCast architecture maps local regions of the input (green boxes) into nodes of the multimesh graph representation (green, upward arrows that terminate in the green-blue node). (E) The processor component updates each multimesh node using learned message-passing (heavy blue arrows that terminate at a node). (F) The decoder component maps the processed multimesh features (purple nodes) back onto the grid representation (red, downward arrows that terminate at a red box). (G) The multimesh is derived from icosahedral meshes of increasing resolution, from the base mesh (M0, 12 nodes) to the finest resolution (M6, 40,962 nodes), which has uniform resolution across the globe. It contains the set of nodes from M6 and all the edges from M0 to M6. The learned message-passing over the different meshes’ edges happens simultaneously, so that each node is updated by all of its incoming edges. [The Earth texture in the figure is used under CC BY 4.0 from https://www.solarsystemscope.com/textures/]. From [Lam et al. 2023](https://www-science-org.mutex.gmu.edu/doi/10.1126/science.adi2336)
 
 - Consists of Graph Neural Networks (GNNs) - one of teh fastest growing class of machine learning models in an "encoder-processor-decoder" configuration (Fig. 1D-F).
 - 
