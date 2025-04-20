@@ -27,11 +27,20 @@ objectives:
   * Geopotential (Z)
   * Specific humidity (Q)
   * Vertical wind speed (W)
-- Like traditional NWP systems, GraphCast is autoregressive: It can be “rolled out” by feeding its own predictions back in as input, to generate an arbitrarily long trajectory of weather states.
-- ![image](https://lh3.googleusercontent.com/PIGlxJLhF3Eit7xSXvVPmm3ZnOYspa9a8RcRkzfEdSnhy2rVubJmIondGQGiKF3TbHTIUOi6w_8xAej5UJ--c7o_8OukH_bDi4gYuEaQ0N6d_BXRQw=w2140-rw)
+- Like traditional NWP systems, GraphCast is autoregressive: It can be “rolled out” by feeding its own predictions back in as input, to generate an arbitrarily long trajectory of weather states up to 10 days in advance.
+![image](https://lh3.googleusercontent.com/PIGlxJLhF3Eit7xSXvVPmm3ZnOYspa9a8RcRkzfEdSnhy2rVubJmIondGQGiKF3TbHTIUOi6w_8xAej5UJ--c7o_8OukH_bDi4gYuEaQ0N6d_BXRQw=w2140-rw)
 
 ### GraphCast Architecture
 
-- Consists of Graph Neural Networks (GNNs) - one of teh fastest growing class of machine learning models in an "encoder-processor-decoder" configuration (Fig. 1D-F).
-- 
--  
+- Consists of Graph Neural Networks (GNNs) - one of teh fastest growing class of machine learning models in an "encoder-processor-decoder" configuration (Fig. 1D-F) in [Lam et al. 2023](https://www-science-org.mutex.gmu.edu/doi/10.1126/science.adi2336).
+- Uses 36.7 million parameters
+- In the encoder, the input variables are normalized to zero mean and unit variance and uses a single GNN layer.
+- It has an internal multimesh representation defined by refining a regular icosahedron (12 nodes, 20 faces, 30 edges) iteratively six times. The multimesh contains 40,962 nodes
+- The processor uses 16 unshared GNNs layers to perform learned message-passing steps, enabling efficient local and long-range information propagation.
+- The decoder uses a single GNN layer to map the final processor layer's learned features from the multimesh representtaion back to the latitude-longitude grid.
+  
+### Training
+- It was trained using 39 years (1979-2017) data from ERA5 reanalysis.
+  
+### Verification
+![video](https://www.youtube.com/watch?v=Q6fOlW-Y_Ss&t=2s)
