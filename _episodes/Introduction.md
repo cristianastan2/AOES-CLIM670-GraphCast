@@ -43,4 +43,4 @@ objectives:
 - It was trained using 39 years (1979-2017) data from ERA5 reanalysis.
   
 ### Verification
-[![Youtube Video]](https://www.youtube.com/embed/Q6fOlW-Y_Ss?si=KVNyjxjMfjQE5muJ
+[![YouTube video player](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/embed/Q6fOlW-Y_Ss?si=KVNyjxjMfjQE5muJ
