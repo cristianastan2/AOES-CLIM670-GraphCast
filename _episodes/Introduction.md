@@ -1,17 +1,16 @@
 ---
-title: "Common Community Physics Package"
+title: "GraphCast Machine Learning based weather prediction"
 teaching: 0
 exercises: 0
 questions:
-- "What is a Physics Package?"
+- "What is GraphCast?"
 objectives:
-- "Learn about the Common Community Physics Package"
+- "Learn about an machine learning weather prediction (MLWP) approach for global medium-range weather forecasting"
 ---
-### Common Community Physics Package (CCPP) Ecosystem
-- CCPP is designated to facilitate implementation of physics innovations in state-of-the-art atmospheric models, the use of various models to develop physics, and the acceleration of transition of physics innovations to operational models. 
-- There are two distinct parts to the CCPP: 
-  - a library of physical parameterizations (CCPP-Physics) that conforms to selected standards, and an infrastructure (CCPP-Framework) that enables connecting the physics to a host model. 
-  - There is also a CCPP single-column model (CCPP SCM) which is a simplified framework that enables experimentation in a controlled setting using forcing datasets originating from experimental field campaigns.
+### GraphCast
+- The material 
+- AI model able to make medium-range weather forecasts up to 10 days in advance
+- Much faster than the industry gold-standard weather simulation
  
 ![](https://dtcenter.org/sites/default/files/inline-images/CCPP%20Ecosystem%20Detailed.png)
 
