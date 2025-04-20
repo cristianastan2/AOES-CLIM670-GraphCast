@@ -42,5 +42,12 @@ objectives:
 ### Training
 - It was trained using 39 years (1979-2017) data from ERA5 reanalysis.
   
-### Verification
+### Results
+- 10-day predictions showing specific humidity at 700 hPa, surface temperature, and surafce wind speed
 [![Youtube Video Player](https://img.youtube.com/vi/Q6fOlW-Y_Ss/default.jpg)](https://www.youtube.com/watch?v=Q6fOlW-Y_Ss)
+
+- Extreme Weather Events
+  * Tropical cyclones
+  * Atmospeheric rivers
+  * Heat  
+
